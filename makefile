@@ -11,8 +11,8 @@ clean:
 
 .PHONY: fmt
 fmt: env_ok
-	env/bin/isort --sp .isort.cfg *.py
-	env/bin/black *.py
+	env/bin/isort --sp .isort.cfg ./mysite/mysite/*.py ./mysite/polls/*.py
+	env/bin/black ./mysite/mysite/*.py ./mysite/polls/*.py
 
 .PHONY: check
 check: env_ok
@@ -22,8 +22,8 @@ check: env_ok
 		--ignore-missing-imports \
 		./
 	env/bin/python -m flake8 --select F ./ --exclude=./env
-	env/bin/isort  --sp .isort.cfg  --check *.py
-	env/bin/black --check *.py
+	env/bin/isort  --sp .isort.cfg  --check ./mysite/mysite/*.py ./mysite/polls/*.py
+	env/bin/black --check ./mysite/mysite/*.py ./mysite/polls/*.py
 
 run:
 	env/bin/python3 ./mysite/manage.py runserver
