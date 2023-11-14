@@ -32,7 +32,7 @@ make fmt
 make check
 ```
 
-- Run main application
+- Run main application (available at [http://localhost:8000/](http://localhost:8000/))
 
 ```shell
 make run
