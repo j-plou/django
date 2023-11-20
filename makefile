@@ -25,5 +25,10 @@ check: env_ok
 	env/bin/isort  --sp .isort.cfg  --check ./mysite/mysite/*.py ./mysite/polls/*.py
 	env/bin/black --check ./mysite/mysite/*.py ./mysite/polls/*.py
 
+.PHONY: run
 run:
 	env/bin/python3 ./mysite/manage.py runserver
+
+.PHONY: test
+test:
+	$(MAKE) -C ./mysite test
